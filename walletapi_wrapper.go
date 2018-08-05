@@ -1,5 +1,5 @@
 // Copyright 2017-2018 DERO Project. All rights reserved.
-// Use of this source code in any form is governed by RESEARCH license.
+// Use of this source code in any form is governed by GPL 3 license.
 // license can be found in the LICENSE file.
 // GPG: 0F39 E425 8C65 3947 702A  8234 08B2 0360 A03A 9DE8
 //
@@ -140,10 +140,10 @@ func (t *CtxObject) genintegratedaddress() {
 		global_object.SetWallet_address(addr.String())
 
 		global_object.SetIntegrated_32_address(i32.String())
-		global_object.SetIntegrated_32_address_paymentid(fmt.Sprintf("%X", i32.PaymentID))
+		global_object.SetIntegrated_32_address_paymentid(fmt.Sprintf("%x", i32.PaymentID))
 
 		global_object.SetIntegrated_8_address(i8.String())
-		global_object.SetIntegrated_8_address_paymentid(fmt.Sprintf("%X", i8.PaymentID))
+		global_object.SetIntegrated_8_address_paymentid(fmt.Sprintf("%x", i8.PaymentID))
 	}
 }
 
@@ -417,7 +417,7 @@ func (t *CtxObject) build_tx(destination, amount_str, paymentid string) {
 	lpayid := strings.TrimSpace(paymentid)
 
 	// if integrated address, payment id should be ignored
-	if fmt.Sprintf("%X", addr.PaymentID) == lpayid {
+	if fmt.Sprintf("%x", addr.PaymentID) == strings.ToLower(lpayid) {
 		lpayid = ""
 	}
 

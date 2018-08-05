@@ -1,5 +1,5 @@
 // Copyright 2017-2018 DERO Project. All rights reserved.
-// Use of this source code in any form is governed by RESEARCH license.
+// Use of this source code in any form is governed by GPL 3 license.
 // license can be found in the LICENSE file.
 // GPG: 0F39 E425 8C65 3947 702A  8234 08B2 0360 A03A 9DE8
 //
@@ -20,4 +20,4 @@ import "github.com/blang/semver"
 
 // right now it has to be manually changed
 // do we need to include git commitsha??
-var Version = semver.MustParse("0.0.2-1.alpha.atlantis+31072018")
+var Version = semver.MustParse("0.0.3-1.alpha.atlantis+04082018")
